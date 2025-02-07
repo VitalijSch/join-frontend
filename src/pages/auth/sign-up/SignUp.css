@@ -1,0 +1,98 @@
+.sign-up {
+    width: 598px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 48px 88px;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 0px 14px 3px #0000000A;
+    position: relative;
+}
+
+.sign-up__arrow-icon-container {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 64px;
+    left: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.sign-up__arrow-icon-container:hover {
+    background-color: #e1e6ec;
+}
+
+.sign-up__arrow-icon {
+    transition: all 0.2s ease-in-out;
+}
+
+.sign-up__arrow-icon-container:hover .sign-up__arrow-icon {
+    transform: scale(1.1);
+}
+
+.sign-up__headline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.sign-up__headline {
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 73.2px;
+}
+
+.sign-up__line {
+    width: 150px;
+    height: 3px;
+    background-color: #29ABE2;
+}
+
+.sign-up__privacy-policy-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sign-up__checkbox {
+    width: 16px;
+    height: 16px;
+    background: url("./../../../assets/images/auth/checkbox.svg") no-repeat center / contain;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.sign-up__checkbox:hover {
+    background-color: #EDF2FA;
+}
+
+.sign-up__checkbox--checked {
+    background-image: url("./../../../assets/images/auth/checkbox-checked.svg");
+}
+
+.sign-up__text {
+    width: 201px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    color: #A8A8A8;
+}
+
+.sign-up__privacy-policy {
+    color: #29ABE2;
+    cursor: pointer;
+}
+
+.sign-up__privacy-policy:hover {
+    font-weight: 500;
+    text-decoration: underline;
+}
