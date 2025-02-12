@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query'
-import { createUser } from '../services/api/createUser'
-import { useNavigation } from './useNavigate'
+import { createUser } from './../services/api/createUser'
+import { useNavigation } from './../../../hooks/useNavigate'
 import { useState } from 'react'
 
 export const useSignUpMutation = (setIsLoading: any) => {

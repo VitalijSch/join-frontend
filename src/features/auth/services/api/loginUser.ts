@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export async function loginUser({ email, password }: { email: string; password: string }) {
+export async function loginUser({ email, password }: { email: string, password: string }) {
     return axios
         .post("http://localhost:8000/api/token/", { email, password })
         .then(res => {

@@ -1,8 +1,8 @@
-import './AuthLayout.css'
-import logoIcon from './../../../assets/images/auth/logo.svg'
-import Login from '../login/Login'
-import SignUp from '../sign-up/SignUp'
-import Button from '../../../components/button/Button'
+import './../../features/auth/styles/AuthLayout.css'
+import logoIcon from './../../assets/images/auth/logo.svg'
+import Login from './Login'
+import SignUp from './SignUp'
+import Button from './../../features/auth/components/Button'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -15,12 +15,12 @@ function AuthLayout() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsIntroAnimation(false)
-        }, 1200);
-        return () => clearTimeout(timer);
+        }, 1200)
+        return () => clearTimeout(timer)
     }, [])
 
     useEffect(() => {
-        setIsLoginPage(location.pathname.includes('/login'));
+        setIsLoginPage(location.pathname.includes('/login'))
     }, [location.pathname])
 
     return (

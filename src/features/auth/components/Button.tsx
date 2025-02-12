@@ -1,5 +1,5 @@
-import './Button.css'
-import { useNavigation } from '../../hooks/useNavigate'
+import './../styles/Button.css'
+import { useNavigation } from './../../../hooks/useNavigate'
 
 interface ButtonProps {
     location?: boolean
@@ -8,18 +8,18 @@ interface ButtonProps {
     name: string
 }
 
-const buttonModifiers: Record<string, { className: string; path: string }> = {
+const buttonModifiers: Record<string, { className: string, path: string }> = {
     'Log in': { className: 'button--login', path: '/auth/login' },
     'Sign up': { className: 'button--sign-up', path: '/auth/sign-up' },
     'Guest Log in': { className: 'button--login', path: '/auth/guest-login' },
 }
 
 function Button({ location, button, type, name }: ButtonProps) {
-    const { navigateTo } = useNavigation();
+    const { navigateTo } = useNavigation()
 
     const handleClick = () => {
         if (location && buttonModifiers[name]) {
-            navigateTo(buttonModifiers[name].path);
+            navigateTo(buttonModifiers[name].path)
         }
     }
 

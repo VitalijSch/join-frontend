@@ -1,11 +1,11 @@
-import './Login.css'
-import mailIcon from './../../../assets/images/auth/mail.svg'
-import lockIcon from './../../../assets/images/auth/lock.svg'
-import Button from '../../../components/button/Button'
-import Input from '../../../components/input/Input'
-import { loginSchema } from '../../../schemas/loginSchema'
-import { useCustomForm } from './../../../hooks/useForm'
-import { useLoginUserMutation } from '../../../hooks/useLoginUserMutation'
+import './../../features/auth/styles/Login.css'
+import mailIcon from './../../assets/images/auth/mail.svg'
+import lockIcon from './../../assets/images/auth/lock.svg'
+import Button from './../../features/auth/components/Button'
+import Input from './../../features/auth/components/Input'
+import { loginSchema } from './../../features/auth/schemas/loginSchema'
+import { useCustomForm } from './../../features/auth/hooks/useForm'
+import { useLoginUserMutation } from './../../features/auth/hooks/useLoginUserMutation'
 
 function Login() {
     const { register, handleSubmit, errors, isValid, watch } = useCustomForm(loginSchema)
