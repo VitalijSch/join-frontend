@@ -33,3 +33,12 @@
     pointer-events: none;
     cursor: pointer;
 }
+
+.input__error-message {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.4px;
+    letter-spacing: 0%;
+    color: #FF8190;
+}

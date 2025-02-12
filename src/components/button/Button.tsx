@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom'
 import './Button.css'
+import { useNavigation } from '../../hooks/useNavigate'
 
 interface ButtonProps {
     location?: boolean
@@ -8,25 +8,26 @@ interface ButtonProps {
     name: string
 }
 
+const buttonModifiers: Record<string, { className: string; path: string }> = {
+    'Log in': { className: 'button--login', path: '/auth/login' },
+    'Sign up': { className: 'button--sign-up', path: '/auth/sign-up' },
+    'Guest Log in': { className: 'button--login', path: '/auth/guest-login' },
+}
+
 function Button({ location, button, type, name }: ButtonProps) {
-    const navigate = useNavigate()
+    const { navigateTo } = useNavigation();
 
-    const navigateToSignUp = () => {
-        if (!location) return
-        navigate("/auth/sign-up")
-    }
-
-    const buttonModifiers: Record<string, string> = {
-        "Log in": 'button--login',
-        "Sign up": 'button--sign-up',
-        "Guest Log in": 'button--login',
+    const handleClick = () => {
+        if (location && buttonModifiers[name]) {
+            navigateTo(buttonModifiers[name].path);
+        }
     }
 
     return (
         <button
-            onClick={navigateToSignUp}
+            onClick={location ? handleClick : undefined}
             type={type}
-            className={`button button--${button} ${buttonModifiers[name]}`}
+            className={`button button--${button} ${buttonModifiers[name].className}`}
         >
             {name}
         </button>

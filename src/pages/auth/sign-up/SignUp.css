@@ -58,6 +58,12 @@
 }
 
 .sign-up__privacy-policy-container {
+    height: 33.6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up__checkbox-text-container {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -95,4 +101,12 @@
 .sign-up__privacy-policy:hover {
     font-weight: 500;
     text-decoration: underline;
+}
+
+.sign-up__privacy-policy-error {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.4px;
+    color: #FF8190;
 }

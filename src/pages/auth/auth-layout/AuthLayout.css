@@ -78,6 +78,30 @@
     color: #29ABE2;
 }
 
+.toast-message {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.toast-message__text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: #2A3647;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    white-space: nowrap;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 4px 0px #00000026;
+    animation: slideUp 0.5s ease-out forwards;
+}
+
 @keyframes resizeAndMove {
     to {
         width: 100.03px;
@@ -91,5 +115,15 @@
 @keyframes fadeIn {
     to {
         opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 1000%);
+    }
+
+    to {
+        transform: translate(-50%, -50%);
     }
 }

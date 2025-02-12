@@ -1,14 +1,15 @@
 import './AuthLayout.css'
 import logoIcon from './../../../assets/images/auth/logo.svg'
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Login from '../login/Login'
 import SignUp from '../sign-up/SignUp'
 import Button from '../../../components/button/Button'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 function AuthLayout() {
     const [isIntroAnimation, setIsIntroAnimation] = useState<boolean>(true)
     const [isLoginPage, setIsLoginPage] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     const location = useLocation()
 
     useEffect(() => {
@@ -48,7 +49,7 @@ function AuthLayout() {
                     <Routes>
                         <Route path="/" element={<Navigate to="login" replace />} />
                         <Route path="login" element={<Login />} />
-                        <Route path="sign-up" element={<SignUp />} />
+                        <Route path="sign-up" element={<SignUp setIsLoading={setIsLoading} />} />
                     </Routes>
                 </div>
 
@@ -57,6 +58,12 @@ function AuthLayout() {
                     <span className="auth-layout__legal-text">Legal notice</span>
                 </div>
             </div>
+
+            {isLoading &&
+                <div className="toast-message">
+                    <div className="toast-message__text">You Signed Up successfully</div>
+                </div>
+            }
         </div>
     )
 }
