@@ -1,3 +1,5 @@
+import Header from './../../features/home/components/Header'
+import Sidebar from './../../features/home/components/Sidebar'
 import './../../features/home/styles/HomeLayout.css'
 import AddTask from './AddTask'
 import Board from './Board'
@@ -8,7 +10,9 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 function HomeLayout() {
     return (
         <div className="home-layout">
-            <div className="home-layout__main-container">
+            <Sidebar />
+            <div className="home-layout__sidebar-main-container">
+                <Header />
                 <Routes>
                     <Route path="/" element={<Navigate to="summary" replace />} />
                     <Route path="summary" element={<Summary />} />
