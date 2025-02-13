@@ -1,9 +1,11 @@
 import './../styles/Header.css'
 import helpIcon from './../../../assets/images/home/help.svg'
 import { useState } from 'react'
+import { useLogout } from '../hooks/logoutUser'
 
 function Header() {
     const [showSubmenu, setShowSubmenu] = useState<boolean>(false)
+    const logout = useLogout()
 
     return (
         <div className="header">
@@ -22,7 +24,7 @@ function Header() {
                         <div onClick={(e) => e.stopPropagation()} className="header__submenu">
                             <span className="header__links">Legal Notice</span>
                             <span className="header__links">Privacy Policy</span>
-                            <span className="header__links">Log out</span>
+                            <span onClick={logout} className="header__links">Log out</span>
                         </div>
                     </div>
                 </div>
