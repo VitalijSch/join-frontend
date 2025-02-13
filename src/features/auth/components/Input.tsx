@@ -1,5 +1,5 @@
 import './../styles/Input.css'
-import visibilityOffIcon from './../../../assets/images/auth/visibility_off.svg'
+import visibilityOffIcon from './../../../assets/images/auth/visibility-off.svg'
 import visibilityIcon from './../../../assets/images/auth/visibility.svg'
 import { useState } from 'react'
 
