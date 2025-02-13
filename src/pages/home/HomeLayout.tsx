@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import { useNavigation } from '../../hooks/useNavigate'
 import Header from './../../features/home/components/Header'
 import Sidebar from './../../features/home/components/Sidebar'
 import './../../features/home/styles/HomeLayout.css'
@@ -8,16 +6,10 @@ import Board from './Board'
 import Contacts from './Contacts'
 import Summary from './Summary'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import LegalNotice from './LegalNotice'
+import PrivacyPolicy from './PrivacyPolicy'
 
 function HomeLayout() {
-    const { navigateTo } = useNavigation()
-
-    useEffect(() => {
-        if (!localStorage.getItem('access') || !localStorage.getItem('refresh')) {
-            navigateTo('/auth/login')
-        }
-    }, [navigateTo])
-
     return (
         <div className="home-layout">
             <Sidebar />
@@ -29,6 +21,8 @@ function HomeLayout() {
                     <Route path="add-task" element={<AddTask />} />
                     <Route path="board" element={<Board />} />
                     <Route path="contacts" element={<Contacts />} />
+                    <Route path="legal-notice" element={<LegalNotice />} />
+                    <Route path="privacy-policy" element={<PrivacyPolicy />} />
                 </Routes>
             </div>
         </div>

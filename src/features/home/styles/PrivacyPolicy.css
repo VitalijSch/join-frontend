@@ -1,0 +1,30 @@
+.privacy-policy {
+    background-color: #f6f7f8;
+    padding: 110px 96px;
+    overflow: auto;
+}
+
+.privacy-policy::-webkit-scrollbar {
+    width: 0;
+}
+
+.privacy-policy h1 {
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 73.2px;
+}
+
+.privacy-policy h2 {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 32.4px;
+}
+
+.privacy-policy ul {
+    padding-left: 25px;
+}
+
+.privacy-policy p {
+    font-size: 16px;
+    line-height: 19.2px;
+}

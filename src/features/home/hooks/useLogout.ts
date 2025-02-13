@@ -1,4 +1,4 @@
-import { useNavigation } from "../../../hooks/useNavigate"
+import { useNavigation } from "../../../hooks/useNavigation"
 
 export function useLogout() {
     const { navigateTo } = useNavigation()

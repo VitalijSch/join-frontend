@@ -5,12 +5,14 @@ import SignUp from './SignUp'
 import Button from './../../features/auth/components/Button'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useNavigation } from '../../hooks/useNavigation'
 
 function AuthLayout() {
     const [isIntroAnimation, setIsIntroAnimation] = useState<boolean>(true)
     const [isLoginPage, setIsLoginPage] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const location = useLocation()
+    const { navigateTo } = useNavigation()
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -21,6 +23,10 @@ function AuthLayout() {
 
     useEffect(() => {
         setIsLoginPage(location.pathname.includes('/login'))
+        if (location.pathname.includes('/login')) {
+            localStorage.removeItem('access')
+            localStorage.removeItem('refresh')
+        }
     }, [location.pathname])
 
     return (
@@ -54,8 +60,8 @@ function AuthLayout() {
                 </div>
 
                 <div className="auth-layout__legal-links">
-                    <span className="auth-layout__legal-text">Privacy Policy</span>
-                    <span className="auth-layout__legal-text">Legal notice</span>
+                    <span onClick={() => navigateTo("/home/privacy-policy")} className="auth-layout__legal-text">Privacy Policy</span>
+                    <span onClick={() => navigateTo("/home/legal-notice")} className="auth-layout__legal-text">Legal notice</span>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query'
-import { useNavigation } from './../../../hooks/useNavigate'
+import { useNavigation } from '../../../hooks/useNavigation'
 import { loginUser } from './../services/api/loginUser'
 import { useState } from 'react'
 

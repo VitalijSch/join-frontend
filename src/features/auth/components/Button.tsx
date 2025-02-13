@@ -1,5 +1,5 @@
 import './../styles/Button.css'
-import { useNavigation } from './../../../hooks/useNavigate'
+import { useNavigation } from '../../../hooks/useNavigation'
 
 interface ButtonProps {
     location?: boolean

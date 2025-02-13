@@ -5,10 +5,10 @@ import lockIcon from './../../assets/images/auth/lock.svg'
 import Input from './../../features/auth/components/Input'
 import Button from './../../features/auth/components/Button'
 import { signUpSchema } from './../../features/auth/schemas/signUpSchema'
-import { useCustomForm } from './../../features/auth/hooks/useForm'
+import { useCustomForm } from '../../features/auth/hooks/useCustomForm'
 import { useSignUpMutation } from './../../features/auth/hooks/useSignUpMutation'
 import { useState } from 'react'
-import { useNavigation } from './../../hooks/useNavigate'
+import { useNavigation } from '../../hooks/useNavigation'
 
 function SignUp({ setIsLoading }: { setIsLoading: any }) {
     const { register, handleSubmit, errors, isValid, watch } = useCustomForm(signUpSchema)
