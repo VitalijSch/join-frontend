@@ -1,0 +1,140 @@
+.contact-list {
+    width: 456px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 32px 0 32px 52px;
+    background-color: #FFFFFF;
+    box-shadow: 4px 0px 6px 0px #00000014;
+}
+
+.contact-list__button-container {
+    width: 352px;
+    height: 101px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    background-color: #FFFFFF;
+}
+
+.contact-list__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 118.5px;
+    padding: 12px;
+    background-color: #2A3647;
+    border: unset;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.contact-list__button:hover {
+    background-color: #29ABE2;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.contact-list__text {
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25.2px;
+    color: #FFFFFF;
+}
+
+.contact-list__contact-list {
+    width: calc(100% - 8px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 52px;
+    overflow: auto;
+}
+
+.contact-list__contact-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contact-list__contact-list::-webkit-scrollbar-thumb {
+    background-color: #a8a8a8;
+    border-radius: 10px;
+}
+
+.contact-list__scrollbar-top {
+    position: absolute;
+    top: 18px;
+    right: 7px;
+}
+
+.contact-list__letter {
+    margin: 17px 36px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.contact-list__line {
+    width: 352px;
+    margin: 8px 0;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+}
+
+.contact-list__contact {
+    width: 352px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 15px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contact-list__contact:hover {
+    background: linear-gradient(180deg, #F9F9F9 0%, #F0F0F0 100%);
+}
+
+.contact-list__contact-logo {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF7A00;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.4px;
+    color: #FFFFFF;
+}
+
+.contact-list__name-email-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-list__name {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.contact-list__email {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #007CEE;
+}
+
+.contact-list__scrollbar-bottom {
+    position: absolute;
+    bottom: 18px;
+    right: 7px;
+}
