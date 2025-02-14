@@ -12,7 +12,8 @@ function Header() {
     const { navigateTo } = useNavigation()
     const isLoggedIn = useAuthenticated()
     const location = useLocation()
-    const isExcludedPath = location.pathname.includes("privacy-policy") || location.pathname.includes("legal-notice")
+    const isExcludedPath = location.pathname.includes('privacy-policy') || location.pathname.includes('legal-notice')
+    const isHelpPath = location.pathname.includes('help')
 
     const handleNavigationTo = (route: string) => {
         setShowSubmenu(false)
@@ -24,7 +25,9 @@ function Header() {
             <span className="header__text">Kanban Project Management Tool</span>
             {isLoggedIn && !isExcludedPath &&
                 <div className="header__menu-icons">
-                    <img className="header__help-icon" src={helpIcon} alt="help icon" />
+                    {!isHelpPath &&
+                        <img onClick={() => navigateTo("/home/help")} className="header__help-icon" src={helpIcon} alt="help icon" />
+                    }
                     <div
                         onClick={() => setShowSubmenu(true)}
                         style={{ backgroundColor: showSubmenu ? "#e1e6ec" : "" }}

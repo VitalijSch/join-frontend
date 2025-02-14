@@ -12,12 +12,13 @@ function Sidebar() {
     const isLoggedIn = useAuthenticated()
 
     useEffect(() => {
-        if (location.pathname.includes("/summary")) setCurrentRoute('summary')
-        if (location.pathname.includes("/add-task")) setCurrentRoute('addTask')
-        if (location.pathname.includes("/board")) setCurrentRoute('board')
-        if (location.pathname.includes("/contacts")) setCurrentRoute('contacts')
-        if (location.pathname.includes("/privacy-policy")) setCurrentRoute('privacyPolicy')
-        if (location.pathname.includes("/legal-notice")) setCurrentRoute('legalNotice')
+        if (location.pathname.includes('/summary')) setCurrentRoute('summary')
+        if (location.pathname.includes('/add-task')) setCurrentRoute('addTask')
+        if (location.pathname.includes('/board')) setCurrentRoute('board')
+        if (location.pathname.includes('/contacts')) setCurrentRoute('contacts')
+        if (location.pathname.includes('/privacy-policy')) setCurrentRoute('privacyPolicy')
+        if (location.pathname.includes('/legal-notice')) setCurrentRoute('legalNotice')
+        if (location.pathname.includes('/help')) setCurrentRoute('')
     }, [location.pathname])
     return (
         <div className="sidebar">

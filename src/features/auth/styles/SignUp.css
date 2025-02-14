@@ -21,13 +21,13 @@
     position: absolute;
     top: 64px;
     left: 56px;
-    border-radius: 50%;
+    border-radius: 42px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 .sign-up__arrow-icon-container:hover {
-    background-color: #e1e6ec;
+    background-color: #EEEEEE;
 }
 
 .sign-up__arrow-icon {

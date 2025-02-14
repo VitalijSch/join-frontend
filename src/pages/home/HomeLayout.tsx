@@ -8,6 +8,7 @@ import Summary from './Summary'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import LegalNotice from './LegalNotice'
 import PrivacyPolicy from './PrivacyPolicy'
+import Help from './Help'
 
 function HomeLayout() {
     return (
@@ -23,6 +24,7 @@ function HomeLayout() {
                     <Route path="contacts" element={<Contacts />} />
                     <Route path="legal-notice" element={<LegalNotice />} />
                     <Route path="privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="help" element={<Help />} />
                 </Routes>
             </div>
         </div>
