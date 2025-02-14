@@ -8,17 +8,20 @@ import { useEffect, useState } from 'react'
 import { useNavigation } from '../../hooks/useNavigation'
 
 function AuthLayout() {
-    const [isIntroAnimation, setIsIntroAnimation] = useState<boolean>(true)
     const [isLoginPage, setIsLoginPage] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const location = useLocation()
     const { navigateTo } = useNavigation()
+    const isIntroAnimation = sessionStorage.getItem("introPlayed") ? false : true
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsIntroAnimation(false)
-        }, 1200)
-        return () => clearTimeout(timer)
+        if (!sessionStorage.getItem("introPlayed")) {
+            const timer = setTimeout(() => {
+                sessionStorage.setItem("introPlayed", "true")
+            }, 1200)
+
+            return () => clearTimeout(timer)
+        }
     }, [])
 
     useEffect(() => {
@@ -35,11 +38,11 @@ function AuthLayout() {
                 style={{ justifyContent: isLoginPage ? "" : "flex-end" }}
                 className="auth-layout__container"
             >
-                <img className='auth-layout__logo' src={logoIcon} alt="logo" />
+                <img className={`auth-layout__logo ${isIntroAnimation ? "auth-layout__logo--intro" : ""}`} src={logoIcon} alt="logo" />
 
                 <div
                     style={{ display: isLoginPage ? "" : "none" }}
-                    className={`auth-layout__sign-up-container ${isIntroAnimation ? "" : "auth-layout__sign-up-container--opacity"}`}
+                    className={`auth-layout__sign-up-container ${isIntroAnimation ? "auth-layout__intro-opacity" : ""}`}
                 >
                     <span className="auth-layout__sign-up-text">Not a Join user?</span>
 
@@ -51,7 +54,7 @@ function AuthLayout() {
                     />
                 </div>
 
-                <div className="auth-layout__main-container">
+                <div className={`auth-layout__main-container ${isIntroAnimation ? "auth-layout__intro-opacity" : ""}`}>
                     <Routes>
                         <Route path="/" element={<Navigate to="login" replace />} />
                         <Route path="login" element={<Login />} />
@@ -59,7 +62,7 @@ function AuthLayout() {
                     </Routes>
                 </div>
 
-                <div className="auth-layout__legal-links">
+                <div className={`auth-layout__legal-links ${isIntroAnimation ? "auth-layout__intro-opacity" : ""}`}>
                     <span onClick={() => navigateTo("/home/privacy-policy")} className="auth-layout__legal-text">Privacy Policy</span>
                     <span onClick={() => navigateTo("/home/legal-notice")} className="auth-layout__legal-text">Legal notice</span>
                 </div>
