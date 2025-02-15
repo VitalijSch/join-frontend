@@ -2,6 +2,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 32px;
     padding-top: 110px;
     padding-left: 55px;
 }
@@ -29,4 +30,111 @@
     font-size: 27px;
     line-height: 32.4px;
     color: #2A3647;
+}
+
+.contact-details__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.contact-details__info-top-container {
+    display: flex;
+    align-items: center;
+    gap: 54px;
+}
+
+.contact-details__contact-icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF7A00;
+    border: 3px solid #FFFFFF;
+    border-radius: 70px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 56.4px;
+    color: #FFFFFF;
+}
+
+.contact-details__name-process-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-details__name {
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 56.4px;
+}
+
+.contact-details__process-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-details__flex-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.contact-details__process-icon path {
+    transition: fill 0.2s ease-in-out;
+}
+
+.contact-details__flex-container:hover .contact-details__process-icon path {
+    fill: #29ABE2;
+}
+
+.contact-details__process-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #2A3647;
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-details__flex-container:hover .contact-details__process-text {
+    font-weight: 700;
+    color: #29ABE2;
+}
+
+.contact-details__process-text--first {
+    width: 31px;
+}
+
+.contact-details__info {
+    padding: 25px 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.contact-details__email-phone-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.contact-details__detail-headline {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.2px;
+}
+
+.contact-details__detail-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+}
+
+.contact-details__detail-text--first {
+    color: #007CEE;
 }

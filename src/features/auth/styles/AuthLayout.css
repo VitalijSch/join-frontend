@@ -2,7 +2,6 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-color: #F6F7F8;
 }
 
 .auth-layout__container {
