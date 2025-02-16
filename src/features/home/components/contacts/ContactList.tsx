@@ -4,13 +4,17 @@ import scrollbarTopIcon from './../../../../assets/images/home/contacts/scrollba
 import scrollbarBottomIcon from './../../../../assets/images/home/contacts/scrollbar-bottom.svg'
 import React from "react"
 
-function ContactList() {
+type ContactListProps = {
+    setShowAddContact: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function ContactList({ setShowAddContact }: ContactListProps) {
     const musterArray = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     return (
         <div className="contact-list">
             <div className="contact-list__button-container">
-                <button className="contact-list__button">
+                <button onClick={() => setShowAddContact(true)} className="contact-list__button">
                     <span className="contact-list__text">Add new contact</span>
                     <img src={personAddIcon} alt="person add icon" />
                 </button>
